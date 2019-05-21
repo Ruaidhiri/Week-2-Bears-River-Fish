@@ -10,7 +10,6 @@ attr_accessor(:name, :type, :stomach_contents)
 
   def catch_fish
     @stomach_contents << Fish.new("South Asian Carp")
-    return @stomach_contents.length
   end
 
   def roar
