@@ -26,16 +26,14 @@ class BearsTest < MiniTest::Test
   end
 
   def test_catch_fish__one_goes_into_tummy
-    @Baloo.catch_fish
+    @Baloo.catch_fish(@river)
     assert_equal(1, @Baloo.stomach_contents.length)
   end
 
-  def test_where_did_you_get_that_fish_bear
-    @Baloo.catch_fish
-    if @Baloo.stomach_contents.length == 1
-      @river.bye_fish
-    end
-  assert_equal(2, @river.fish_population.length)
+  def test_catch_fish__from_the_river
+    @Baloo.catch_fish(@river)
+    assert_equal(1, @Baloo.stomach_contents.length)
+    assert_equal(2, @river.fish_population.length)
   end
 
   def test_roar

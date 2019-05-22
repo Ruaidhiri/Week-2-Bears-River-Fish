@@ -8,12 +8,14 @@ attr_accessor(:name, :type, :stomach_contents)
     @stomach_contents = []
   end
 
-  def catch_fish
-    @stomach_contents << Fish.new("South Asian Carp")
+  def catch_fish(river)
+    fish = river.bye_fish
+    @stomach_contents << fish
   end
 
   def roar
     return "Roar!"
   end
+
 
 end
